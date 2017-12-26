@@ -7,7 +7,7 @@ function createCalender(title,year,month,day) {
   var calendar = CalendarApp.getCalendarById("xxxxxxx@gmail.com");
 
   //日付をDateクラスにします(月の計算は注意)
-  var date = Date(year,month-1,day);
+  var date = new Date(year,month-1,day);
 
   //カレンダー内に終日の予定を作成します
   calendar.createAllDayEvent(title,date);
