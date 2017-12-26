@@ -14,7 +14,12 @@ http://nextpublishing.jp/book/9104.html
 
 GASの仕様変更がありましたら、随時ここで変更点をお知らせします
 
-- 現在、大きな変更点はありません
+## 認証画面の変更について
+
+認証画面において，少し操作が複雑になりました．
+認証の方法について以下に示します．
+
+- [一部機能についての認証方法の変更について](https://github.com/takanakahiko/GAS_Katsuyou_Nyuumon/tree/master/doc/about_auth)
 
 
 # 正誤関連情報
