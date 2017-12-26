@@ -21,7 +21,20 @@ GASの仕様変更がありましたら、随時ここで変更点をお知ら�
 
 執筆の不備で表記違い等が発見された場合、随時ここでお知らせします
 
+## タイポ修正 - 12/26
+
+タイプミス等で発生した不良ソースコードを以下に提示します．
+ご迷惑おかけして申し訳ありません．
+
 - [タイポ修正 - 12/26](https://github.com/takanakahiko/GAS_Katsuyou_Nyuumon/commit/fa6fabf7d83ce8d049a1030d6e9ffd33345b29d8)
+
+## Twitter通信についての不具合
+
+Twitterの通信部分(P84~94)にて不具合が発覚しました．
+以下にソースコードを訂正する際の差分を提示します．
+ご迷惑おかけして申し訳ありません．
+
+- [Twitter通信部修正](https://github.com/takanakahiko/GAS_Katsuyou_Nyuumon/commit/48f2be322f0217ca9cd9f6957e6ef781047318ea)
 
 # 誤表記を発見した方へ
 
