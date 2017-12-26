@@ -17,10 +17,10 @@ function authCallback(request) {
 }
 
 function auth(){
-    var service = getTwitterService();
-    if (service.hasAccess()) return;
-    var authorizationUrl = service.authorize();
-    Logger.log(authorizationUrl);
+  var service = getTwitterService();
+  if (service.hasAccess()) return;
+  var authorizationUrl = service.authorize();
+  Logger.log(authorizationUrl);
 }
 
 //エンドポイント共通のURL部分を指定
@@ -28,7 +28,7 @@ var twitter_base_url = 'https://api.twitter.com/1.1/';
 
 //twitterAPIにPOSTアクセスをする関数
 function postAccessTwitter(endPoint, payload){
-  var service  = twitter.getService();
+  var service = getTwitterService();
   var payload_str = payloadToString(payload);
   var options = {method:'post', escaping:false, payload:payload_str};
   var url = twitter_base_url+endPoint+'.json';
@@ -37,10 +37,11 @@ function postAccessTwitter(endPoint, payload){
 
 //twitterAPIにGETアクセスをする関数
 function getAccessTwitter(endPoint, payload){
-  var service  = twitter.getService();
+  var service = getTwitterService();
   var payload_str = payloadToString(payload);
   var options = { method:'get', escaping:false};
-  var url = twitter_base_url+endPoint+'.json?'+payload_str;
+  var url = twitter_base_url+endPoint+'.json';
+  if( payload_str.length>0 ) url += '?'+payload_str;
   return service.fetch(url, options)
 };
 
@@ -60,7 +61,7 @@ function encodeToRfc3986(str) {
 
 //タイムラインを取得する関数
 function getTimeline(){
-    var response = getAccessTwitter('statuses/user_timeline', null);
+    var response = getAccessTwitter('statuses/user_timeline', {});
     var tweets = JSON.parse(response.getContentText());
     for(var i = 0; i < tweets.length;i++){
         if(tweets[i].text.match(/中山/) ){
@@ -77,4 +78,12 @@ function postSlack(message){
   var url = "先ほど控えたURL";
   var payload = { "text": message };
   sendHttpPost(url, "payload=" + JSON.stringify(payload));
+}
+
+function sendHttpPost(url,payload){
+  var options =　{
+    "method" : "post",
+    "payload" : payload
+  };
+  UrlFetchApp.fetch(url, options);
 }
