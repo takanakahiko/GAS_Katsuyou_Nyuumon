@@ -41,6 +41,13 @@ Twitterの通信部分(P84~94)にて不具合が発覚しました．
 
 - [Twitter通信部修正](https://github.com/takanakahiko/GAS_Katsuyou_Nyuumon/commit/48f2be322f0217ca9cd9f6957e6ef781047318ea)
 
+また，以下のライブラリキーについても不具合の原因となっていました．
+ご迷惑おかけして申し訳ありません．
+
+|箇所|誤|正|
+|-|-|-|
+|P.52|MFE2ytR_vQqYfZ9VodecRE0qO0XQ_ydfb|1CXDCY5sqT9ph64fFwSzVtXnbjpSfWdRymafDrtIZ7Z_hwysTY7IIhi7s|
+
 # 誤表記を発見した方へ
 
 誤表記を発見された方がいましたら、以下よりお教えいただけると助かります。
