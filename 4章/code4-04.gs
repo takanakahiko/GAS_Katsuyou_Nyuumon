@@ -35,7 +35,7 @@ function generateWeatherMail(id){
   mailText += "天気:" + weather + "\n";
   if(todayData.temperature.min !== null){
     var tempMin = todayData.temperature.min.celsius;
-    var tempMax = todayData.temperature.min.celsius;
+    var tempMax = todayData.temperature.max.celsius;
     mailText += "温度:" + tempMin + "~" + tempMax + "\n";
   }
   mailText += "\n";

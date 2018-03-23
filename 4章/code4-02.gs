@@ -43,7 +43,7 @@ function generateWeatherMail(id){
 
   if(todayData.temperature.min !== null){ //温度のデータが取得できた場合は
     var tempMin = todayData.temperature.min.celsius; //最低温度を取り出す
-    var tempMax = todayData.temperature.min.celsius; //最高温度を取り出す
+    var tempMax = todayData.temperature.max.celsius; //最高温度を取り出す
     mailText += "温度:" + tempMin + "~" + tempMax + "\n";
   }
 
